@@ -25,6 +25,10 @@ const Message = mongoose.model('Message', MessageSchema);
 const GEMINI_API_KEY = 'AIzaSyBVc4oFnf6ZX2vLG8yjycLXI8zAEAM000w';
 const GEMINI_API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${GEMINI_API_KEY}`;
 
+app.post('/api', async (req, res) => {
+  res.send('Server is running successfully..., Hurray!!')
+})
+
 app.post('/api/message', async (req, res) => {
   try {
     const { userId, message } = req.body;
